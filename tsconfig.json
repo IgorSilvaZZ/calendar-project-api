@@ -1,0 +1,21 @@
+{
+  "extends": "@tsconfig/node24/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "paths": {
+      "@domain/*": ["./src/domain/*"],
+      "@app/*": ["./src/app/*"],
+      "@entities/*": ["./src/domain/entities/*"],
+      "@repositories/*": ["./src/domain/repositories/*"]
+    }
+  },
+  "includes": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "vitest.config.ts"
+  ]
+}

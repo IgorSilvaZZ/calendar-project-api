@@ -1,0 +1,9 @@
+sonar.projectKey=calendar-project
+sonar.projectName=Calender Project DEV
+sonar.javascript.lcov.reportPaths=./coverage/lcov.info
+sonar.typescript.lcov.reportPaths=./coverage/lcov.info
+sonar.sources=.
+sonar.host.url=http://localhost:9000
+sonar.token="SONAR_TOKEN"
+sonar.exclusions=**/node_modules/**,**/target/**,**/build/**,**/dist/**,**/*.min.js,**/*.d.ts,**/coverage/**
+sonar.typescript.tsconfigPaths=tsconfig.json
