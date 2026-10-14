@@ -8,18 +8,18 @@ export interface ExceptionsHoursAttributes {
 	action: string;
 	calendarId: string;
 	createdAt?: Date;
-	updatedAt: Date;
+	updatedAt?: Date;
 	deletedAt?: Date;
 }
 
 export class ExceptionsHours {
-	private _id: string;
+	private readonly _id: string;
 	private _date: Date;
 	private _startHour: string;
 	private _endHour: string;
 	private _action: string;
 	private _calendarId: string;
-	private _createdAt: Date;
+	private readonly _createdAt: Date;
 	private _updatedAt: Date;
 	private _deletedAt?: Date;
 
@@ -107,6 +107,15 @@ export class ExceptionsHours {
 	}
 
 	// ----- Soft delete / restore -----
+	delete(): void {
+		this._deletedAt = new Date();
+		this.touch();
+	}
+
+	restore(): void {
+		this._deletedAt = undefined;
+		this.touch();
+	}
 
 	// ----- Utilitários & Validações de Domínio -----
 
@@ -129,7 +138,7 @@ export class ExceptionsHours {
 		const hourEndToDate = this.convertHourToDate(hourEnd);
 
 		if (hourEndToDate.getTime() <= hourStartToDate.getTime()) {
-			throw new Error("hourEnd must be greater than hourStart.");
+			throw new Error("hourEnd must be greater than startHour.");
 		}
 	}
 }

@@ -7,17 +7,17 @@ export interface AvailableHoursAttributes {
 	endHour: string;
 	calendarId: string;
 	createdAt?: Date;
-	updatedAt: Date;
+	updatedAt?: Date;
 	deletedAt?: Date;
 }
 
 export class AvailableHours {
-	private _id: string;
+	private readonly _id: string;
 	private _calendarId: string;
 	private _weekDay: number;
 	private _startHour: string;
 	private _endHour: string;
-	private _createdAt: Date;
+	private readonly _createdAt: Date;
 	private _updatedAt: Date;
 	private _deletedAt?: Date;
 

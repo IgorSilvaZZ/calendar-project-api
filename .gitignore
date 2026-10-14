@@ -140,7 +140,11 @@ tools/gotestsum.exe.hash
 !tsc/testdata/submoduleAccepted.txt
 !tsc/testdata/submoduleTriaged.txt
 
+# SonarQube scanner files
+.scannerwork
+**/.scannerwork/
 sonar-project.properties
+.sonar
 
 # Arquivos de definições
 definicao_configuracao_horarios
