@@ -1,7 +1,10 @@
-import type { CalendarAttributes } from "@domain/entities/Calendar";
-
-export type CalendarInput = Omit<CalendarAttributes, "id">;
+export type CalendarInput = {
+	name: string;
+	userId: string;
+	timeZone: string;
+	availableHours: string[];
+};
 
 export type CalendarUpdateInput = {
-	name: string;
+	name?: string;
 };
