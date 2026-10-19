@@ -13,10 +13,11 @@ export class CreateCalendarUseCase {
 	) {}
 
 	/* 
-		Passos para criar um calendario
-		Usuario deve existir
-		Validar se o codigo alfa numerico existe cadastrado caso existir criar um novo e realizar a mesma validação
-		Criar os horarios disponiveis e exceções
+		Passos para criar um calendario:
+		- Usuario deve existir
+		- Validar se o codigo alfa numerico existe cadastrado caso existir criar um novo e realizar a mesma validação
+		- Criar os horarios disponiveis
+		- Criar Exceções
 	*/
 
 	public async execute(input: CalendarInput) {

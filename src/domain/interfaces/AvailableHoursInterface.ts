@@ -4,3 +4,7 @@ export type AvailableHoursInput = {
 	startHour: string;
 	endHour: string;
 };
+
+export type AvailableHoursUpdateInput = Partial<
+	Omit<AvailableHoursInput, "calendarId">
+>;

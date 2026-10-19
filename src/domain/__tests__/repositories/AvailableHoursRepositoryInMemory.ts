@@ -3,10 +3,15 @@ import {
 	AvailableHours,
 	type AvailableHoursAttributes,
 } from "@domain/entities/AvailableHours";
-import type { AvailableHoursInput } from "@domain/interfaces/AvailableHoursInterface";
+import type {
+	AvailableHoursInput,
+	AvailableHoursUpdateInput,
+} from "@domain/interfaces/AvailableHoursInterface";
 import type { AvailableHoursRepository } from "@domain/repositories/AvailableHoursRepository";
 
-export class AvailableHoursInMemory implements AvailableHoursRepository {
+export class AvailableHoursRepositoryInMemory
+	implements AvailableHoursRepository
+{
 	public availableHours: AvailableHours[] = [];
 
 	private getActivitiesAvailableHours(): AvailableHours[] {
@@ -48,7 +53,7 @@ export class AvailableHoursInMemory implements AvailableHoursRepository {
 
 	async update(
 		id: string,
-		input: Partial<AvailableHoursInput>,
+		input: AvailableHoursUpdateInput,
 	): Promise<AvailableHours> {
 		const availableHour = await this.findById(id);
 
