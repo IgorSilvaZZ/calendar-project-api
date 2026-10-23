@@ -39,6 +39,10 @@ export class ExceptionsHoursRepositoryInMemory
 	}
 
 	async createMany(input: ExceptionsHoursInput[]): Promise<ExceptionsHours[]> {
+		if (!input.length) {
+			return [];
+		}
+
 		const exceptionsHours = input.map(
 			(item) => new ExceptionsHours({ id: randomUUID(), ...item }),
 		);
